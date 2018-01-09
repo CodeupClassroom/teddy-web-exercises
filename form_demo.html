@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<h2>Login User</h2>
+<!-- action attribute on a form is WHERE you're sending the form (URL or a specific file) -->
+<!-- method is the "type" of request. We have GET and POST -->
+<!-- GET method is used for downloading information, we use GET in search forms -->
+<!-- POST method is used for uploading information, we use POST on login forms -->
+
+<!-- Anchor tag w/ a query string -->
+<a href="?property_type=apartment&zipcode=78205">Click here for all apartments in 78205</a>
+<br>
+<h3>Property Search</h3>
+<!-- Form that produces a query string -->
+<form method="GET" action="">
+    <label for="property_type">Property Type:</label>
+    <input type="text" name="property_type" id="property_type" placeholder="input the type of property">
+
+    <label for="zipcode">ZipCode</label>
+    <input type="text" name="zipcode" id="zipcode" placeholder="zipcode to search">
+
+    <button type="submit">Search Now!</button>
+</form>
+
+
+<h3>Login form below</h3>
+<form action="" method="POST" id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" placeholder="Input your username here.">
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" placeholder="Input your password here.">
+
+    <button type="submit">Login</button>
+
+</form>
+
+</body>
+</html>

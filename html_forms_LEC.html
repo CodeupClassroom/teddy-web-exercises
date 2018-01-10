@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Lecture</title>
+</head>
+<body>
+
+	<!--
+		Form Types
+		Syntax
+		Method attribute (the HTTP verb used to transmit the data)
+		Action attribute (where the form data is submitted)
+		Query Strings (key-value pairs appended to the URL when making a GET request)
+		Submitting forms
+		Input types
+		Labels
+		Attributes (name and value)
+	-->
+
+	<h1>HTML Forms</h1>
+
+    <hr>
+
+    <h2>Standard Form</h2>
+
+	<form method="POST" action="https://hookb.in/vX8D4QkP">
+	    <label for="username">Username</label>
+	    <input id="username" name="username" type="text">
+	    <br>
+
+	    <label for="password">Password</label>
+	    <input id="password" name="password" type="password">
+	    <br>
+
+	    <input type="submit">
+	</form>
+
+
+    <h2>Method and Action Attributes</h2>
+
+	<!-- METHOD ATTRIBUTE -->
+
+		<!--
+			Primary HTTP Methods:
+				1) GET
+				2) POST
+				3) PUT
+				4) PATCH
+				5) DELETE
+
+			HTML only allows GET and POST methods because the specifications have not been finalized yet
+
+			GET 											-VS- 			POST
+			Less secure 									---- 			"More" secure
+			Cachable and bookmarkable 						---- 			Not cachable or bookmarkable
+			A request for information from a server			---- 			A request to submit information to a server
+			Use when searching or linking					---- 			Use for submitting data to be stored
+
+			For additional information: "https://www.w3schools.com/tags/ref_httpmethods.asp"
+		-->
+
+		<!-- GET -->
+        <h4>Using GET</h4>
+		<form method="GET" action="https://hookb.in/vX8D4QkP">
+			<input type="hidden" name="q" value="Codeup">
+			<button type="submit">Submit</button>
+			<!-- <input type="submit"> -->
+		</form>
+
+		<!-- POST -->
+        <h4>Using POST</h4>
+		<form method="POST" action="https://hookb.in/vX8D4QkP">
+			<input type="hidden" name="q" value="Codeup">
+			<button>Submit</button>
+		</form>
+
+		<!-- NONE? -->
+        <h4>No method attribute</h4>
+		<form action="https://hookb.in/vX8D4QkP">
+			<input type="hidden" name="q" value="Codeup">
+			<button>Submit</button>
+		</form>
+
+	<!-- ACTION ATTRIBUTE -->
+		<!-- none -->
+        <h4>Blank Action</h4>
+		<form action="">
+			<input type="hidden" name="q" value="Codeup">
+			<button>Submit</button>
+		</form>
+
+		<!-- GET Search  -->
+        <h4>GET Search</h4>
+		<form method="GET" action="https://duckduckgo.com">
+			<input type="hidden" name="q" value="Codeup">
+			<button>GET DuckDuck</button>
+		</form>
+
+		<!-- POST Search  -->
+        <h4>POST Search</h4>
+		<form method="POST" action="https://duckduckgo.com">
+			<input type="hidden" name="q" value="Codeup">
+			<button>POST DuckDuck</button>
+		</form>
+
+		<!-- POST Search to Google  -->
+        <h4>POST Search to Google</h4>
+		<form method="POST" action="https://google.com">
+			<input type="hidden" name="q" value="Codeup">
+			<button>POST Google</button>
+		</form>
+
+
+	<!-- QUERY STRINGS -->
+
+		<!--
+			Three ways to make GET requests:
+			    1) URL search
+			    2) Clicking a link
+			    3) Submitting a form
+		-->
+
+        <h3>Three Ways to Make a GET Request</h3>
+
+        <ol>
+            <li>Type address in address bar</li>
+            <li>
+                <a href="https://duckduckgo.com?q=codeup">Click a Link</a>
+            </li>
+            <li>
+                <form method="GET" action="https://duckduckgo.com">
+                    <input type="hidden" name="q" value="Codeup">
+                    <button>Submit a Form</button>
+                </form>
+            </li>
+        </ol>
+
+
+    <h2>Input Types and Attributes</h2>
+
+	<!-- INPUT TYPES AND ATTRIBUTES -->
+	<form method="POST" action="https://hookb.in/vX8D4QkP">
+
+		<!-- Text -->
+        <h4>Text Input</h4>
+		<input type="text" name="movie" placeholder="Enter favorite movie">
+
+        <!-- Email -->
+        <h4>Email Input</h4>
+        <input type="email" name="email" placeholder="Enter email address">
+
+		<!-- Password -->
+        <h4>Password Input</h4>
+		<input type="password" name="password" placeholder="Enter password">
+
+		<!-- Text area -->
+        <h4>Textarea Input</h4>
+		<textarea name="post" rows="4" cols="50" placeholder="Write blog post"></textarea>
+
+		<!-- Checkboxes -->
+        <h4>Checkbox Input</h4>
+		<input name="newsletter_signup" value="true" type="checkbox" checked>Sign Up For The Email Newsletter
+
+        <!-- Multiple Checkboxes -->
+        <h4>Multiple Checkboxes</h4>
+        <fieldset>
+            <legend>Choose Toppings</legend>
+            <input name="topping" value="pepperoni" type="checkbox">Pepperoni
+            <input name="topping" value="peppers" type="checkbox">Peppers
+            <input name="topping" value="mushrooms" type="checkbox">Mushrooms
+            <input name="topping" value="olives" type="checkbox">Olives
+        </fieldset>
+
+		<!-- Radio Buttons -->
+        <h4>Radio Input</h4>
+        <fieldset>
+            <legend>Select Answer</legend>
+            A <input type="radio" name="quiz_question_1" value="a"><br>
+            B <input type="radio" name="quiz_question_1" value="b"><br>
+            C <input type="radio" name="quiz_question_1" value="c"><br>
+            D <input type="radio" name="quiz_question_1" value="d"><br>
+        </fieldset>
+
+		<!-- Selects (with or without multiple option) -->
+        <h4>Select Inputs</h4>
+		<select name="coffee_preference">
+		    <option value="light">Light Roast</option>
+		    <option value="dark">Dark Roast</option>
+		    <option value="espresso">Espresso Blend</option>
+		</select>
+
+		<!-- Hidden Inputs -->
+        <h4>Hidden Inputs</h4>
+		<input type="hidden" name="user_id" value="432">
+
+		<!-- Labels -->
+		<label for="firstName">First Name</label>
+		<input id="firstName" name="firstName" type="text">
+
+        <!-- Disabled -->
+        <label for="lastName">Last Name</label>
+        <input id="lastName" name="lastName" type="text">
+
+		<!-- Submit Button -->
+        <div>
+		    <button>Submit</button>
+        </div>
+
+	</form>
+
+</body>
+</html>

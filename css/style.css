@@ -1,4 +1,70 @@
+h1 {
+    text-align: center;
+}
+
+h1, h2, h3 {
+    text-decoration: underline;
+    color: aquamarine;
+}
+
 .fancy-header {
     color: blue; /* single line comment */
     text-decoration: underline;
+}
+
+body {
+    /*background-color: coral;*/
+    display: block;
+    position: relative;
+}
+
+body::after {
+    content: "";
+    background-image: url("../img/fish.png");
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+ol {
+    list-style-type: upper-roman;
+    display: block;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul {
+    list-style-type: circle;
+    display: block;
+    list-style-position: inside;
+    text-align: center;
+}
+
+h1, li, p {
+    font-family: 'Limelight', serif;
+}
+
+table {
+    border: 2px solid green;
+}
+
+.centered {
+    display: block;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a:active {
+    font-weight: bold;
+}
+
+img {
+    width: 30%;
+    height: 30%;
 }

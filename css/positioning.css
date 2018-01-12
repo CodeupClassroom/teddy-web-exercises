@@ -1,0 +1,51 @@
+h1 {
+    color: purple;
+    text-decoration: underline;
+    margin-bottom: 0;
+}
+.box img {
+    position: relative;
+    bottom: 85px;
+    left: 40px;
+}
+.ribbon {
+    float: right;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    bottom: 21px;
+    left: 8px;
+}
+.box {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid black;
+    color: white;
+    font-weight: bold;
+    float:left;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+.stay {
+    white-space: nowrap;
+}
+.red {
+    background-color: #CC392C;
+}
+.orange {
+    background-color: #E6A32D;
+}
+.yellow {
+    background-color: #FCF52D;
+}
+.green {
+    background-color: #50840E;
+    clear: left;
+}
+.blue {
+    background-color: #1E42FA;
+}
+.purple {
+    background-color: #DA80EE;
+}

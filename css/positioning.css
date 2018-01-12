@@ -34,7 +34,6 @@ h1 {
 }
 #green-box {
     background-color: green;
-    clear: left;
 }
 #blue-box {
     background-color: blue;
@@ -47,4 +46,8 @@ h1 {
     position: fixed;
     top: 0;
     right: 0;
+}
+
+div:nth-child(odd) {
+    clear: both;
 }

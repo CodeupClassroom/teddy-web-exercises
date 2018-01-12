@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Box Model Lecture</title>
+	<style type="text/css">
+
+		/* 
+
+			Content Area: Width x Height
+			Padding
+			Border
+			Margin
+			Overall element size with box-sizing: content-box...
+				height = height + padding-top + padding-bottom + border-top + border-bottom
+				width = width + padding-left + padding-right + border-left + border-right
+
+			Specifying 1 value, 2 values, 4 values
+
+			Divs and spans
+				
+				Quick review: inline vs. block elements
+
+			Div elements - box
+
+			Span tags - wrapping paper
+
+		*/
+
+		.box {
+			width: 80px;
+			height: 80px;
+			border: 10px solid black;
+		}
+
+		.first-box {
+			background-color: blue;
+			/*padding: top right bottom left;*/
+			padding: 0 0 0 0;
+
+				/* or */
+
+			/*padding: top/bottom left/right */
+			/*padding: 0 0;*/
+
+
+			margin: 0 0 0 0;
+
+		}
+
+		.second-box {
+			background-color: green;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="box first-box">Box 1</div>
+	<div class="box second-box">Box 2</div>
+
+
+</body>
+</html>

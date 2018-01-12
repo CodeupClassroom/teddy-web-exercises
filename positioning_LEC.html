@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Positioning Lecture</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+
+        /*
+
+            FLOATING
+
+                1) No floats 
+                2) Box 1 - float left
+                3) Box 2 - float left
+                4) Both boxes float left
+                5) Box 1 - float left, Box 2 float right
+                6) Box 1 Float Left and Box 2 Float Right, Paragraph Clear Left
+                7) Box 1 Float Right and Box 2 Float Left, Paragraph Clear Right
+                8) Box 1 Float Right and Box 2 Float Left, Paragraph Clear Both
+
+            POSITIONING
+
+                1) Static
+                2) Relative 
+                3) Absolute
+                4) Fixed
+
+        */
+
+        body {
+            background-color: black;
+            margin: 0;
+        }
+        p {
+            /* Lecture... */
+            clear: right;
+        }
+        span {
+            color: white;
+            font-size: 2em;
+            font-family: sans-serif;
+        }
+        .container {
+            background-color: white;
+            min-height: 800px;
+            width: 600px;
+            margin: 0 auto;
+            margin-top: 20px;
+            padding: 10px;
+            position: relative;
+        }
+        .box1 {
+            height: 150px;
+            width: 150px;
+            padding: 10px;
+            background-color: green;
+        }
+
+        .box2 {
+            height: 200px;
+            width: 200px;
+            padding: 10px;
+            background-color: blue;
+        }
+        
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="box1"><span>Box 1</span></div>
+        <div class="box2"><span>Box 2</span></div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae dolor dolores doloribus earum eius facilis illo neque nisi non omnis pariatur, qui sit temporibus tenetur unde velit voluptatem voluptatum!
+        </p>
+    </main>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsive Layout</title>
+    <style>
+
+        body {
+            background-color: black;
+            margin: 0;
+        }
+        main {
+            width: 80%;
+            max-width: 1000px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background-color: white;
+            padding: 10px;
+        }
+        div {
+            background-color: cornflowerblue;
+            height: 30vw;
+            width: 30vw;
+            display: inline-block;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            float: left;
+        }
+        p {
+            clear: both;
+        }
+
+        @media screen and (min-width:400px) {
+            div {
+                background-color: blue;
+                width: 70vw;
+                height: 70vw;
+            }
+        }
+
+        @media screen and (min-width:600px) {
+            div {
+                background-color: red;
+                width: 30vw;
+                height: 30vw;
+            }
+        }
+
+        @media screen and (min-width:800px) {
+            div {
+                background-color: yellow;
+                width: 20vw;
+                height: 20vw;
+            }
+        }
+
+        @media screen and (min-width:1000px) {
+            div {
+                background-color: green;
+                width: 12vw;
+                height: 12vw;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <h1>This is a fluid layout!</h1>
+        <h3>Specific styling that kicks in at specified break points...</h3>
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem doloribus exercitationem molestias omnis quam unde voluptatibus! Deserunt, eveniet, veniam! Aliquam blanditiis culpa dignissimos dolores illo in, ipsum magni minus praesentium.</p>
+
+        <a href="">Link</a>
+    </main>
+
+</body>
+</html>

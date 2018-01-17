@@ -67,4 +67,39 @@ footer > p {
 /* Applies when the screen is wider than 768px */
 /* Put CSS that applies to non-mobile sized screen here */
 @media screen and (min-width: 768px) {
+    .hidden-on-desktop {
+        display: none;
+    }
+
+    h1 {
+        text-align: left;
+        padding: .2em;
+        float: left;
+        margin-bottom: 1em;
+    }
+
+    /* pull navbar list items to right */
+    /* remove navbar list item background color */
+    .nav-links {
+        text-align: right;
+        float: right;
+    }
+    .nav-links li {
+        background-color: transparent;
+        display: inline-block;
+        padding: .2em;
+        line-height: 4em;
+    }
+
+    section {
+        float: left;
+    }
+    /* main section to take up 2/3rds of page*/
+    .main {
+        width: 66%;
+    }
+    /* subsection to take up 1/3rd of page */
+    .sub-section {
+        width: 33%;
+    }
 }

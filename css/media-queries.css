@@ -63,3 +63,8 @@ footer > p {
     float: left;
     letter-spacing: 1em;
 }
+
+/* Applies when the screen is wider than 768px */
+/* Put CSS that applies to non-mobile sized screen here */
+@media screen and (min-width: 768px) {
+}

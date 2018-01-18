@@ -2,8 +2,8 @@
 html,
 body {
     margin: 0;
-    height: 100%;
-    width: 100%;
+    /*height: 100%;*/
+    /*width: 100%;*/
     box-sizing: border-box;
     font-family: sans-serif;
 }
@@ -96,10 +96,10 @@ footer > p {
     }
     /* main section to take up 2/3rds of page*/
     .main {
-        width: 66%;
+        /*width: 66%;*/
     }
     /* subsection to take up 1/3rd of page */
     .sub-section {
-        width: 33%;
+        /*width: 33%;*/
     }
 }

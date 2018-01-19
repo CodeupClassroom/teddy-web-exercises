@@ -1,0 +1,45 @@
+h3 {
+    text-align: center;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.row {
+    width: 100%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.large-column,
+.medium-column,
+.small-column {
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .medium-column {
+        width: 50%;
+    }
+
+    .small-column {
+        width: 25%;
+    }
+
+    .small-offset {
+        margin-left: 25%;
+    }
+}
+
+
+

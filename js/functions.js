@@ -8,6 +8,9 @@
  * Example
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
+function sayHello(name) {
+    return "Hello, " + name + "!";
+}
 
 /**
  * TODO:
@@ -16,6 +19,8 @@
  *
  * console.log 'helloMessage' to check your work
  */
+var helloMessage = sayHello("Ryan");
+console.log(helloMessage);
 
 /**
  * TODO:
@@ -23,6 +28,8 @@
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
+var myName = "Ryan";
+console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -45,6 +52,11 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
+function isTwo(x) {
+    return x === 2;
+}
+
+console.log("Is " + random + " equal to the number two: " + isTwo(random));
 
 /**
  * TODO:
@@ -57,6 +69,16 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.25, 25.50) // returns 6.37
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
+function calculateTip(tipPercentage, total) {
+    return tipPercentage * total;
+}
+
+var bill = 20;
+var tipPercent = .2;
+var tipAmount = calculateTip(tipPercent, bill);
+
+console.log("A " + (tipPercent*100) + "% tip on a " + bill + " bill is " + tipAmount);
+
 
 /**
  * TODO:
@@ -64,6 +86,10 @@ var random = Math.floor((Math.random() * 3) + 1);
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+bill = prompt("Please input the bill amount");
+tipPercent = prompt("Provide an decimalamount you want to tip: example: .20 means 20%");
+tipAmount = calculateTip(tipPercent, bill);
+console.log("A " + (tipPercent*100) + "% tip on a " + bill + " bill is " + tipAmount);
 
 /**
  * TODO:
@@ -79,3 +105,13 @@ var random = Math.floor((Math.random() * 3) + 1);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+function applyDiscount(originalPrice, discountPercent) {
+    var discountedAmount = originalPrice * discountPercent;
+    var finalPrice = originalPrice - discountedAmount;
+    return finalPrice;
+}
+
+var price = 500;
+var discount = .2;
+var total = applyDiscount(price, discount);
+console.log(total + " is our total after applying a " + discount + " discount to " + price + "!");

@@ -223,3 +223,66 @@ var total = prompt("How much was the total amount spent?");
 alert("Your lucky number is " + luckyNumber);
 alert("Price before the discount is " + total);
 alert("after the discount, your total is " + calculateTotal(luckyNumber, total));
+
+// Bonus 1.
+// Write a function (or multiple functions) that will return
+// a boolean depending on if the string value passed to it
+// as an argument is the name of a day of the week that starts with a T.
+//     Otherwise, it should return false.
+//     Example: dayOfTheWeekStartsWithT("Monday")     => returns false
+// Example: dayOfTheWeekStartsWithT("Tuesday")     => returns true
+// Example: dayOfTheWeekStartsWithT("Tommy")     => returns false
+function dayOfTheWeekStartsWithT(input) {
+    input = input.toLowerCase();
+
+    if(input === "tuesday" || input === "thursday") {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(dayOfTheWeekStartsWithT("Texas"));
+console.log(dayOfTheWeekStartsWithT("tomorrow"));
+console.log(dayOfTheWeekStartsWithT("TUESDAY"));
+console.log(dayOfTheWeekStartsWithT("Friday"));
+
+function dayOfTheWeekStartsWithT(input) {
+    input = input.toLowerCase();
+    return input == "tuesday" || input == "thursday";
+}
+
+// Bonus 2.
+// Write a function, isValidPassword, that takes in a string argument and returns true or false
+// depending on whether or not all the following conditions are true:
+// 1) Must be 6 characters long (only for the sake of this exercise, NOT a best practice)
+// 2) Contains at least one letter and one number
+// 3) Contains at least one upper and one lower case letter
+// 4) Only comprised of letters and numbers
+// 5) EXTRA BONUS: is not the same forwards and backwards
+function isValidPassword(input) {
+    var lengthIsGood = input.length == 6;
+    var hasAtLeastOneLetter = hasLetter(input);
+    var hasAtLeastOneNumber = hasNumber(input);
+    var hasLowerCaseLetter;
+    var hasUpperCaseLetter;
+    var alphaNumeric;
+
+    return lengthIsGood && hasAtLeastOneLetter && hasAtLeastOneNumber && hasLowerCaseLetter && hasUpperCaseLetter && alphaNumeric;
+}
+
+function hasLetter(input) {
+    input = input.toLowerCase();
+
+    return input.includes("a") || input.includes("b") || input.includes("c") ||
+        input.includes("d") || input.includes("e") || input.includes("f") ||
+        input.includes("g") || input.includes("h");
+}
+
+function hasNumber(input) {
+    input = input.toLowerCase();
+
+    return input.includes(0) || input.includes(1) || input.includes(2) ||
+        input.includes(3) || input.includes(4) || input.includes(5) ||
+        input.includes(6) || input.includes(7) || input.includes(8) ||
+        input.includes(9) || input.includes(0);
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loops Lecture</title>
+</head>
+<body>
+    <h1>Loops Lecture</h1>
+
+<script>
+
+    "use strict";
+
+    // while (audienceIsLoud) {
+    //     console.log("Please quiet down!");
+    //     audienceIsLoud = isAudienceStillLoud();
+    // }
+
+
+    // ================================ WHILE LOOP
+
+    /*
+        While loop syntax:
+
+            while (conditionIsTrue) {
+                do something...
+            }
+
+        Used to repeat a block of code until a condition changes to break the loop
+        Likely used when the number of iterations is unknown
+
+        Diagram ***Curriculum***
+
+    */
+
+    // basic example
+
+    // var x = 1;
+    // while (x < 4) {
+    //     console.log(x);
+    //     ++x;
+    // }
+
+
+    // possible use cases
+
+    // while(gameRunning) {
+    //     drawCanvas();
+    // }
+
+
+    // condition never executes
+
+    // var x = 10;
+    //
+    // while (x < 5) {
+    //     console.log(x);
+    //     x--;
+    // }
+    //
+    // while (x <= 20) {
+    //     console.log(x);
+    //     x++;
+    // }
+
+
+    // infinitely executes
+
+    // while (x = 10) {
+    //     console.log("This is the song that never ends...");
+    // }
+
+
+
+    // ================================ DO-WHILE LOOP
+
+    /*
+        While loop syntax:
+
+            do {
+                do something no matter what...
+            } while(conditionIsTrue;
+
+        Used to execute a block and code at least once 
+        and repeat it until the condition is no longer true
+
+        Diagram ***Curriculum***
+
+    */
+
+    // basic example
+
+    // var x = 100;
+    //
+    // do {
+    //     console.log("This will run");
+    //     x--;
+    // } while(x <= 10);
+
+
+
+    // use case
+
+    // var password;
+    // do {
+    //     password = prompt("Please enter a valid password.");
+    // } while (isInvalidPass(password));
+    //
+    //
+    // var password = prompt("Please enter a valid password.");
+    // while (isInvalidPass(password)) {
+    //     password = prompt("Please enter a valid password.");
+    // }
+
+
+    // The do-while executes at least once
+
+
+           
+
+    // ================================ FOR LOOP
+
+    /*
+        For loop diagram ***Curriculum***
+
+        For loop syntax:
+
+            for (initialization; test; iteration) {
+                do something a set number of times
+            }
+        
+        Used to perform an action based on a number iterations
+
+    */
+
+    // with incrementer
+
+    // for (var i = 0; i <= 10; i += 1) {
+    //     console.log("The number is " + i);
+    // }
+
+
+
+    // with decrementer
+
+    // for (var i = 16; i >= 0; i -= 4) {
+    //     console.log(i);
+    // }
+
+
+
+    // nested for loops
+    //
+    // for (var i = 0; i <= 10; i += 1) {
+    //     for (var j = 0; j <= 10; j += 1) {
+    //         console.log("Value of i is " + i + "value of j is " + j);
+    //     }
+    // }
+
+
+
+    // multiple iterators (less common)
+
+
+
+
+
+    // ================================ BREAK / CONTINUE
+
+    // break - keyword to end the execution of a loop
+
+
+    // web example
+
+        // var password = "123";
+        //
+        // var count = 0;
+        // while (false) {
+        //     password = prompt("Please enter a valid password: ");
+        //     if (password === "123") {
+        //         break;
+        //
+        //     }
+        // }
+        //
+        // console.log("Access granted.");
+
+    // game example
+
+        // var gameRunning = true;
+        //
+        // var lives = 3;
+        //
+        // while (gameRunning) {
+        //     // play game
+        //     if (lives === 0) {
+        //         console.log("Game over");
+        //         break;
+        //     }
+        // }
+
+
+
+
+
+
+    // continue
+
+        console.log("Continue example");
+
+        var y = 0;
+
+        while (true) {
+            y++;
+            if (y === 100) {
+                console.log("End of loop!");
+                break;
+            }
+            if (y % 5 === 0) {
+                continue;
+            }
+            console.log(y);
+        }
+
+    // web example
+
+    /*
+
+        Display a stylized list of weather info by year 
+        in which a specific geographic region experienced drought conditions.
+            Skip any years that do not meet the criteria.
+            If the years have already been displayed in the list, continue to the next year.
+
+     */
+
+</script>
+
+</body>
+</html>

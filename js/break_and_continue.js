@@ -5,7 +5,7 @@ var input;
 
 do {
     input = prompt("Please input a number between 1 and 50");
-} while(input > 50 || input < 1 || isNaN(parseFloat(input)));
+} while(input > 50 || input < 1 || isNaN(parseFloat(input)) || input % 2 != 0);
 
 console.log("number to skip is " + input);
 

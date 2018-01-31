@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loop Bonuses!</title>
+</head>
+<body>
+<h1>Loop Bonuses!</h1>
+
+<script>
+    // Write a function to toggle all characters in a string:
+    // in a given string, toggle all characters to their opposite case.
+    // Special characters will not change.
+    // Example input: "aBc12#"
+    // Example output: "AbC12#"
+
+    function isUpperCase(letter) {
+        return letter === letter.toUpperCase();
+    }
+
+    function swapCase(string) {
+        var output = "";
+        for(var i = 0; i < string.length; i++) {
+            if(isUpperCase(string[i])) {
+                output += string[i].toLowerCase();
+            } else {
+                output += string[i].toUpperCase();
+            }
+
+        }
+        return output;
+    }
+
+    console.log(swapCase("Hello, Everybody! Yay, JavaScript!"));
+    console.log(swapCase("Bob"));
+
+    // Write a function that takes a given string appended with a number at the end.
+    // The program will check the length of the string to verify the string is equal to the number appended.
+    // If the number appended equals the string length, output "Yes".
+    // if the number appended does not equal the string length, output "No".
+    // Example Input: "geek5"
+    // Example Output: "Yes"
+    // Example Input: "codingchallenge25"
+    // Example Output: "No"
+
+
+    // take the string, break it into two pieces
+    // one piece is the letters
+    // another piece is the number
+    // once we have the number, check if the number is the same as the string length
+    // search "how to get the numerals out of a string in javascript"
+    // ask each character if it's a number
+    // if it is, add it to a string called "number"
+    // once you're done, return number == string.length
+
+    // parseFloat(string) => "banana55" => NaN
+    // parseFloat("56banana") => 56
+    // "how to reverse a string in javascript"
+    // check each character
+
+    function lengthCheck(input) {
+        var number = "";
+        for(var i = 0; i <= input.length; i++) {
+            // if the character is a number.
+            if(!isNaN(parseFloat(input[i]))) {
+                number += input[i];
+            }
+        }
+
+        if(input.length == number) {
+            return "Yes";
+        } else {
+            return "No";
+        }
+    }
+
+
+
+    console.log(lengthCheck("Jane5"));  // "yes"
+    console.log(lengthCheck("Bob22"));  // "no"
+
+
+</script>
+</body>
+</html>

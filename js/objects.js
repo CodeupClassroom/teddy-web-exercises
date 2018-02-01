@@ -11,6 +11,25 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
+    var person = {
+        firstName: "John",
+        lastName: "McClain",
+        sayHello: function() {
+            return "Hello from " + this.firstName + " " + this.lastName;
+        }
+    };
+
+    console.log(person.firstName);
+    console.log(person.lastName);
+
+    var anotherPerson = {};
+    anotherPerson.firstName = "Jackie";
+    anotherPerson.lastName = "Chan";
+    anotherPerson.sayHello = function() {
+        return "Hello from " + this.firstName + " " + this.lastName;
+    };
+
+    console.log(anotherPerson.firstName + " " + anotherPerson.lastName);
 
     /**
      * TODO:
@@ -21,6 +40,11 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+
+
+    console.log(person.sayHello());
+    console.log(anotherPerson.sayHello());
+
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -36,11 +60,20 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+
+    shoppers.forEach(function(shopper) {
+        if(shopper.amount > 200) {
+            shopper.amount = shopper.amount - (shopper.amount * .12);
+        }
+        console.log(shopper.name + " spend " + shopper.amount);
+    });
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a

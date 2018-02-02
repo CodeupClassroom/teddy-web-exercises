@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM Lecture</title>
+</head>
+<body>
+    <h1>BOM Lecture</h1>
+
+<script>
+
+    "use strict";
+
+    /*
+        ================================= BROWSER OBJECT MODEL (BOM)
+
+        BOM = hierarchy of objects that make up the browser
+
+        Highest level object: window object
+
+        Main objects nested within the window object:
+
+            document  - a tree of elements of the current page
+            navigator - info about the browser itself
+            location  - info about the current url
+            history   - history of visited url with methods to traverse history
+            screen    - info about the current browser dimensions
+
+            additional information: https://www.w3schools.com/js/js_ex_browser.asp
+
+        Important methods within the window object:
+            Dialogue functions: alert(), confirm(), prompt()
+            setTimeout() - starts a timer after which a process may execute
+            setInterval() - starts an interval that can execute a repeated process
+
+        Location object:
+
+            Redirect to another page or reload the current page
+
+    */
+
+    /*
+        ================================= setTimeout()
+
+            Real world application:
+
+            session time out (online banking)
+            pop up window  -  https://ambitionally.com/popupally/sample-time/
+    */
+
+
+    // function fire() {
+    //     console.log("Fired!");
+    // }
+    //
+    // var intervalId = setTimeout(fire, 3000);
+    //
+    // console.log(intervalId);
+    //
+    // clearInterval(intervalId);
+    //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // create pop up ad after 3 seconds
+
+    //    var x;
+    //    var wait = 2000;
+    //
+    //    var timeoutId = setTimeout(function() {
+    //        alert("You WON $1,000,000.00!!!!");
+    //        x = 23;
+    //        console.log("The value of x is: " + x);
+    //    }, wait);
+    //
+    //
+    //    console.log(timeoutId);
+    // // asynchronous errors
+    //    console.log(x);
+
+
+    /*
+        ================================= setInterval()
+
+        Set interval method:
+
+        Real world application:
+            slide show animation
+            music sequencer
+            AJAX requests
+
+        ** see example **
+    */
+
+
+
+
+
+    // create interval to say howdy 10 times
+
+       // var interval = 1;
+       // var i = 1;
+       //
+       // var intervalId = setInterval(function(){
+       //     if (i === 1000) {
+       //         clearInterval(intervalId);
+       //     }
+       //     console.log(i);
+       //     ++i;
+       // }, interval);
+
+       // console.log(intervalId);
+
+
+
+
+
+      
+    // ================================= Location object
+
+    // Redirect
+
+       // window.location = "https://www.google.com";
+
+
+    // Reload page
+
+      // location.reload();
+      // location.reload(true);
+
+    
+</script>
+
+</body>
+</html>

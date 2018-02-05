@@ -25,52 +25,76 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<!-- Created HTML buttons -->
+<button id="main-header-btn">Change Header</button>
+<button id="sub-header-btn">Change Sub Header</button>
+<button id="li-btn">Change Li's</button>
+<button id="sub-para-btn">Change Sub Para</button>
+
 <script>
     (function() {
         "use strict";
-        // TODO: Uncomment next line and get the main header element by id
-        var mainHeader = document.getElementById("main-header");
 
-        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+        // DOM references to button elements
+        var headerBtn = document.getElementById('main-header-btn');
+        var subHeaderBtn = document.getElementById('sub-header-btn');
+        var liBtn = document.getElementById('li-btn');
+        var subParaBtn = document.getElementById('sub-para-btn');
 
-        mainHeader.innerHTML = "JavaScript is Cool";
+        // Defined functions
+        function changeHeader() {
+            // TODO: Uncomment next line and get the main header element by id
+            var mainHeader = document.getElementById("main-header");
 
-        // TODO: Uncomment the next line and get the sub header element by id
-        var subHeader = document.getElementById("sub-header");
+            // TODO: Set inner html of mainHeader to "JavaScript is Cool"
 
-        // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = "blue";
+            mainHeader.innerHTML = "JavaScript is Cool";
+        }
 
+        function changeSubHeader() {
+            // TODO: Uncomment the next line and get the sub header element by id
+            var subHeader = document.getElementById("sub-header");
 
-        // TODO: Uncomment the next line and get all list items
-        var listItems = document.getElementsByTagName('li');
+            // TODO: Set the text color of subHeader to blue
+            subHeader.style.color = "blue";
+        }
 
+        function changeLis() {
+            // TODO: Uncomment the next line and get all list items
+            var listItems = document.getElementsByTagName('li');
 
-        // TODO: Set text color on every other list item to grey
+            // TODO: Set text color on every other list item to grey
+            for (var i = 0; i < listItems.length; i += 1) {
+                if (i % 2 === 0) {
+                    listItems[i].style.color = "grey";
+                }
+            }
 
-        for (var i = 0; i < listItems.length; i += 1) {
-            if (i % 2 === 0) {
-                listItems[i].style.color = "grey";
+            // TODO: Set text color of li with dbid = 1 to blue
+            for (var i = 0; i < listItems.length; i += 1) {
+                if (listItems[i].getAttribute('data-dbid') === '1') {
+                    listItems[i].style.color = "blue";
+                }
             }
         }
 
+        function changeSubParagraph() {
+            // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+            var subParagraphs = document.getElementsByClassName('sub-paragraph');
 
-        // TODO: Set text color of li with dbid = 1 to blue
+            // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
 
-        for (var i = 0; i < listItems.length; i += 1) {
-            if (listItems[i].getAttribute('data-dbid') === '1') {
-                listItems[i].style.color = "blue";
-            }
+            subParagraphs[0].innerText = "Mission Accomplished!";
         }
 
 
 
-        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs = document.getElementsByClassName('sub-paragraph');
 
-        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-
-        subParagraphs[0].innerText = "Mission Accomplished!";
+        // Add Event Listeners
+        headerBtn.addEventListener("click", changeHeader);
+        subHeaderBtn.addEventListener("click", changeSubHeader);
+        liBtn.addEventListener("click", changeLis);
+        subParaBtn.addEventListener("click", changeSubParagraph);
 
     })();
 </script>

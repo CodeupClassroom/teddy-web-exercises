@@ -70,6 +70,7 @@
     <main>
         <section class="input">
             <h1>Options</h1>
+            <button id="office" data-address="600 Navarro St. San Antonio TX 78205">Codeup Office</button>
 
             <button data-zoom=5 class="zoom">Zoom x 5</button>
             <button data-zoom=10 class="zoom">Zoom x 10</button>
@@ -157,6 +158,11 @@
            zoomLevel = parseInt(zoomLevel);
            map.setZoom(zoomLevel);
         });
+    });
+
+    document.getElementById('office').addEventListener('click', function(event) {
+       var address = event.target.getAttribute('data-address');
+       initMap(address);
     });
 
 </script>

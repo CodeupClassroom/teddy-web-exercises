@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>JS is Asynchronous</h1>
+<h2>JS is non-blocking</h2>
+
+<script>
+    "use strict";
+
+    function firstThing() {
+        setTimeout(function() {
+            console.log("Make a request to an API");
+        }, 5);
+    }
+
+    function secondThing() {
+        console.log("Add results to page");
+    }
+
+    firstThing();
+    secondThing();
+
+</script>
+</body>
+</html>

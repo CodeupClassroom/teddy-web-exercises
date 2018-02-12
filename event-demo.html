@@ -28,16 +28,19 @@
         event.preventDefault();
         $("div").html("");
 
+        var username = $("#username").val();
+        var password = $("#password").val();
+
         // happy path
-        if($("#username").val() !== "" && $("#password").val() !== "") {
+        if(username !== "" && password !== "") {
             $("form").submit();
         }
 
-        if($("#username").val() === "") {
+        if(username === "") {
             $("div").append("<h2>Username must not be empty.</h2>");
         }
 
-        if($("#password").val() === "") {
+        if(password === "") {
             $("div").append("<h2>Password must not be empty.</h2>");
         }
     }

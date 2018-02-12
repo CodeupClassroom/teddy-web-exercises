@@ -7,12 +7,17 @@
         main {
             margin: 1em;
         }
+
+        .highlight {
+            background-color: yellow;
+        }
+
     </style>
 </head>
 <body>
 <main id="codeup">
     <div id="idSelectorExercises">
-        <h1>Hello</h1>
+        <h1><a id="link" class="multiple" href="https://codeup.com" target="_blank">Hello</a></h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus fugit, possimus. Accusantium, ad architecto at, blanditiis consequatur distinctio dolorem eligendi minima neque nostrum placeat quae, quaerat quisquam recusandae reiciendis veritatis!</p>
         <ul class="list">
             <li>One for the money</li>
@@ -52,47 +57,33 @@
     </section>
     <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script>
+        // change background color of an h1 when clicked
+        // $("h1").click(function(event) {
+        //     // $(this).css('background-color', 'cyan');
+        //     $(event.target).css('background-color', 'cyan');
+        // });
 
-        function doThejQuery() {
-            // id selectors
-            // Use jQuery to select an element by the id.
-            // Alert the contents of the element.
-            alert($("#thirdItem").text());
+        // make all p tags have font-size 18 when doubleClicked
+        var paragraphs = $("p");
 
-            // Update the jQuery code to select and alert a different id.
-            var idDiv = $("#idSelectorExercises");
-            alert(idDiv.html());
+        paragraphs.dblclick(function(e) {
+            paragraphs.css("font-size", 24);
+        });
 
-            // Use the same id on 2 elements. How does this change the jQuery selection?
-            // Remove the duplicate id. Each id should be unique on that page.
+        // set all li text color to red when the mouse is hovering over, reset to black text when there's no more hover
+        $("li").hover(
+            function(event) {
+                $("li").css("color", "red");
+            },
+            function(event) {
+               $("li").css("color", "black");
+            }
+        );
 
+        $("h1").click(function(event) {
+            $(event.target).toggleClass("highlight");
+        });
 
-            // class selectors
-            // Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
-            $(".codeup").css('border', '1px solid red');
-
-            //     Remove the class from one of the elements. Refresh and test that the border has been removed.
-            //     Give another element an id of codeup. Does this element get a border now?
-
-            // element selectors
-            // Using jQuery, set the font-size of all li elements to 20px.
-            $("li").css({
-                'font-size': "20px",
-                'background-color': 'cyan'
-            });
-            //     Craft selectors that highlight all the h1, p, and li elements.
-            $("h1").css("background-color", "yellow");
-            $("p").css("background-color", "yellow");
-            // $("li").css("background-color", "yellow");
-
-            //     Create a jQuery statement to alert the contents of your h1 element(s).
-            alert($("h1").text());
-
-            // Combine your selectors that highlight all the h1, p, and li elements.
-            $('h1, p, li').css('color', 'cyan');
-        }
-
-        setTimeout(doThejQuery, 2000);
 
     </script>
 </body>

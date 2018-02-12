@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<main class="container">
+    <h1>Login!</h1>
+    <form action="" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username">
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+        <div class="output"></div>
+        <button id="login" type="submit">Login</button>
+    </form>
+</main>
+
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+    // when users click the login button, make sure that:
+    // if they're both non-empty, submit the form
+    // otherwise, tell the user that the input must have something
+    function validateInputsAndSubmit(event) {
+        event.preventDefault();
+        $("div").html("");
+
+        // happy path
+        if($("#username").val() !== "" && $("#password").val() !== "") {
+            $("form").submit();
+        }
+
+        if($("#username").val() === "") {
+            $("div").append("<h2>Username must not be empty.</h2>");
+        }
+
+        if($("#password").val() === "") {
+            $("div").append("<h2>Password must not be empty.</h2>");
+        }
+    }
+
+    $("#login").click(validateInputsAndSubmit);
+
+</script>
+</body>
+</html>

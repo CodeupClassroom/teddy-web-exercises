@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+        #map-display {
+            height: 500px;
+            width: 800px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<h1>Google Map</h1>
+
+<div id="map-display"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxIPbNd4ljI6NdSyP5ugk4XoKDzw2VEZM"></script>
+<script>
+
+    (function() {
+
+        "use strict";
+
+        var mapDisplay = document.getElementById("map-display");
+
+        var options = {
+
+            zoom : 8,
+            center: {
+                lat: 29,
+                lng: -98
+            }
+        };
+
+        var map = new google.maps.Map(mapDisplay, options);
+
+        // ADD MARKER
+
+        // Create lat and long for our marker position
+        var codeup = { lat: 29.426791, lng: -98.489602 };
+
+        // Add the marker to our existing map
+        var marker = new google.maps.Marker({
+            position: codeup,
+            map: map
+        });
+
+
+        // ADD INFO WINDOW
+
+        var infowindow = new google.maps.InfoWindow({
+            content: "<h1>This is a Marker</h1>"
+        });
+
+        marker.addListener("click", function() {
+            infowindow.open(map, marker);
+        });
+
+
+    })();
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+

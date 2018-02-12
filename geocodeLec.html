@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Geocode/Custom Features Lecture</title>
+
+    <style>
+
+        #map-display {
+            height: 500px;
+            width: 800px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<h1>Geocoding and Custom Features Map</h1>
+
+<div id="map-display"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxIPbNd4ljI6NdSyP5ugk4XoKDzw2VEZM"></script>
+<script>
+
+    // (function() {
+
+        "use strict";
+
+        var mapDisplay = document.getElementById("map-display");
+
+        var options = {
+
+            zoom : 12,
+            center: {
+                lat: 29,
+                lng: -98
+            }
+
+        };
+
+        var map = new google.maps.Map(mapDisplay, options);
+
+        // GEOCODE EXAMPLE
+
+        // STEP 1: create address and store in variable
+        // var address = "One UTSA Circle";
+        //
+        // function geocodeIt(someAddress) {
+        //
+        //     // STEP 2: create new instance of Geocoder object
+        //     var geocoder = new google.maps.Geocoder();
+        //
+        //     // STEP 3: call the geocode method to do something with the matching physical address results
+        //     geocoder.geocode({address: someAddress}, function(results, status){
+        //
+        //         // https://developers.google.com/maps/documentation/javascript/geocoding#GeocodingStatusCodes
+        //         console.log(status);
+        //         console.log(results);
+        //         console.log(results[0].geometry.location.lat());
+        //         console.log(results[0].geometry.location.lng());
+        //
+        //         if (status === "OK") {
+        //             map.setCenter(results[0].geometry.location);
+        //         }
+        //
+        //     });
+        // }
+
+
+        // test geocodeIt
+        // geocodeIt(address);
+
+
+        // // REVERSE GEOCODE EXAMPLE
+        function reverseGeocodeIt(latitude, longitude) {
+
+            // create new instance of Geocoder object
+            var geocoder = new google.maps.Geocoder();
+
+            // call the geocode method to do something with the matching physical address results
+            geocoder.geocode({location: {lat: latitude, lng: longitude}}, function(results, status){
+
+                console.log(status);
+                if (status === "OK") {
+                    console.log(results[0]);
+                    map.setCenter(results[0].geometry.location);
+                }
+
+            });
+        }
+
+        // test reverseGeocodeIt on Empire State Building
+        // reverseGeocodeIt(40.748817, -73.985428);
+
+
+    // })();
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

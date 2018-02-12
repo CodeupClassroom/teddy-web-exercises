@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Trebuchet MS";
+        }
+
+        body>header {
+            display: grid;
+            grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+            font-size: 3em;
+            background-color: salmon;
+            color: cyan;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 3px 3px saddlebrown;
+            padding: 0.25em;
+        }
+        header > span {
+            font-family: monospace;
+        }
+
+        main {
+            /*display: grid;*/
+            /*grid-template-columns: 66% 33%;*/
+            padding: 1em;
+        }
+
+        #map-canvas {
+            width: 100%;
+            height: 581px;
+        }
+        input {
+            font-size: 1.2em;
+            width: 80%;
+            height: 2em;
+        }
+        section {
+            padding: 0.5em;
+        }
+
+        button {
+            height: 3em;
+            width: 5.5em;
+            margin-top: .5em;
+            margin-bottom: .5em;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <span>G</span>
+        <span>o</span>
+        <span>o</span>
+        <span>g</span>
+        <span>l</span>
+        <span>e</span>
+        <span>M</span>
+        <span>a</span>
+        <span>p</span>
+        <span>s</span>
+    </header>
+    <main>
+        <section class="input">
+            <h1>Options</h1>
+            <button id="office" data-address="600 Navarro St. San Antonio TX 78205">Codeup Office</button>
+
+            <button data-zoom=5 class="zoom">Zoom x 5</button>
+            <button data-zoom=10 class="zoom">Zoom x 10</button>
+            <button data-zoom=15 class="zoom">Zoom x 15</button>
+            <button data-zoom=18 class="zoom">Zoom x 18</button>
+            <button data-zoom=20 class="zoom">Zoom x 20</button>
+            <div>
+                <input type="text" id="address" name="address" value="124 Broadway, San Antonio, TX 78205" placeholder="Please input the address of a location to map!">
+            </div>
+            <button id="get-address-button">Map it!</button>
+        </section>
+        <section class="map">
+            <h1>Map</h1>
+            <div id="map-canvas"></div>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGkSxN7UDE4QYGd4KJ1qyOuO7OVhXQvhQ"></script>
+<script>
+    "use strict";
+
+    var addressInput = document.getElementById('address');
+    var getAddress = document.getElementById('get-address-button');
+
+    getAddress.addEventListener('click', function() {
+        // get the address from the address text input
+        var address = addressInput.value;
+        initMap(address);
+    });
+
+    // Generate a map that shows the city with your favorite restaurant using geocoding.
+    var mapOptions = {
+        // Set the zoom level
+        zoom: 19,
+
+        // Show this map in satellite view
+        mapTypeId: google.maps.MapTypeId.SATELLITE
+    };
+
+    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    var geocoder = new google.maps.Geocoder();
+
+    function initMap(address) {
+
+        // Geocode our address
+        geocoder.geocode({ "address": address }, function(results, status) {
+            // Check for a successful result
+            if (status === google.maps.GeocoderStatus.OK) {
+
+                // Recenter the map over the address
+                map.setCenter(results[0].geometry.location);
+
+                // Add the marker to our existing map
+                var marker = new google.maps.Marker({
+                    position: results[0].geometry.location,
+                    map: map
+                });
+
+            } else {
+
+                // Show an error message with the status if our request fails
+                alert("Geocoding was not successful - STATUS: " + status);
+            }
+
+
+
+        });
+    }
+
+    initMap(addressInput.value);
+
+
+    // Redraw the map of the above location at zoom levels 5, 15, and 20.
+    // Create a marker on your map of the exact location of your favorite restaurant and adjust the zoom to allow for best viewing distance.
+    // Create an info window with the name of the restaurant.
+
+    var zoomButtons = document.getElementsByClassName('zoom');
+    zoomButtons = Array.from(zoomButtons);
+    zoomButtons.forEach(function(element) {
+       element.addEventListener('click', function(event) {
+           var zoomLevel = event.target.getAttribute("data-zoom");
+           zoomLevel = parseInt(zoomLevel);
+           map.setZoom(zoomLevel);
+        });
+    });
+
+    document.getElementById('office').addEventListener('click', function(event) {
+       var address = event.target.getAttribute('data-address');
+       initMap(address);
+    });
+
+</script>
+</body>
+</html>

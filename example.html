@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    // every kind of loop
+    // while loops
+    // check the condition after the "while" keyword
+    // condition is in parentheses
+    // if the condition is true, we enter the body of the loop.
+    // the code in the body of the loop runs.
+    // because it's a loop, conditional checks to see if it should run again
+    // only way(s) out of a loop is:
+    // condition to become false. if the condition is false, we don't run again
+    // "break" statement will break out of a loop.
+    var favoriteNumber = prompt("What's your favorite number?");
+    while(isNaN(parseFloat(favoriteNumber))) {
+        console.log("Dude, that's not a number.");
+        favoriteNumber = prompt("Input your favorite number.");
+    }
+    console.log("Yay, your favorite number is " + favoriteNumber);
+
+    // do while loops always run once, then check the condition
+    // if the condition evaluates to true, loop again
+    // else keep going
+    var favoriteNumber;
+    var attempts = 0;
+    do {
+        favoriteNumber = prompt("What's your favorite number?")
+        attempts++;
+    } while(isNaN(parseFloat(favoriteNumber)));
+
+    console.log("Your favorite number is " + favoriteNumber);
+    console.log("omg, it only took you " + attempts + " number of tries");
+    //
+    // for loops are a good tool if what you're working w/ is a number
+    // we use a changing number (incrementing number)
+    var cars = [];
+    cars.push("bug");
+    cars.push("thing");
+    cars.push("pick'mup truck");
+    cars.push("banana");
+
+    for(var i = cars.length -1; i >= 0; i--) {
+        console.log(cars[i]);
+    }
+
+
+    //     forEach
+    // setInterval
+    //
+
+    // array bonus
+    // array manipulation bonuses
+    // how to approach making a solution w/ a loop
+    // array of objects bonuses
+
+    // 1. Write a function called average(numbers) that takes in an array of numbers and returns the average
+    //
+    // 2. Write a function called sumAll(numbers) that takes in an array of numbers and returns the sum of adding all of them.
+    //
+    // 3. Write a function called max(numbers) that takes in an array of numbers and returns the largest
+    //
+    // 4. Write a function called min(numbers) that takes in an array of numbers and returns the smallest
+    //
+    // 5. Write a function called reverseArray(array) that takes in an array and returns the elements in reverse order
+    //
+    // 6. Write a function called randomElement(array) that takes in an array and returns a random element
+    //
+    // 7. Write a function called upperCaseAll(array) that takes in an array of strings and returns an array of uppercased strings.
+    //
+    // 8. Write a function called getOdds(array) that returns an array of only the odd numbers from an array of numbers.
+    //
+    // 9. Write a function called getEvens(array) that returns only the even numbers from an array of numbers
+    //
+    // 10. Write a function called multiplyAll(array) that takes in an array of numbers and returns the result of multiplying all the numbers
+
+
+
+</script>
+</body>
+</html>

@@ -66,7 +66,6 @@
         {name: 'George', amount: 320}
     ];
 
-
     shoppers.forEach(function(shopper) {
         if(shopper.amount > 200) {
             shopper.amount = shopper.amount - (shopper.amount * .12);

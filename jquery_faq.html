@@ -9,7 +9,6 @@
         }
 
         .highlight {
-            display: inline-block;
             background-color: yellow;
         }
 
@@ -70,29 +69,61 @@
     <dd class="invisible">Vehicles, and vehicle combinations, longer than 21 feet (including bumpers) or wider than 8 feet (including mirrors) are prohibited between Avalanche Campground and the Sun Point parking area. You may however, drive to Avalanche if traveling east, and to Sun Point, if traveling west. Vehicles over 10 feet in height may have difficulty driving west from Logan Pass due to rock overhangs. Stock trucks and trailers may access Packers Roost and Siyeh Bend.</dd>
 </dl>
 
-<button>Toggle Answers</button>
+<h3 id="national-parks-heading">National Parks</h3>
+<ul id="national-parks">
+    <li>Arches</li>
+    <li>Badlands</li>
+    <li>Carlsbad Caverns</li>
+    <li>Denali</li>
+    <li>Everglades</li>
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks-texas">
+    <li>Abilene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+    <li>Enchanted Rock</li>
+</ul>
+<h3>Amusement Parks</h3>
+<ul id="amusement-parks">
+    <li>Disney World</li>
+    <li>6 Flags Over Texas</li>
+    <li>Sea World</li>
+    <li>Universal Studios</li>
+</ul>
+
+
+<button id="li1">Make the last li in each ul have a yellow background</button>
+<button id="li2">Another way to make the last li in each ul have a yellow background</button>
 
 <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
-
 <script>
 
-    // Attributes exercise
-    $(document).ready(function() {
-        "use strict";
-
-        // Toggle class
-
-        $('button').click(function(event) {
-            $('dd').toggleClass('invisible');
+    $("#li1").click(function() {
+        $("ul").each(function(index, element) {
+           $(element).children().last().toggleClass('highlight');
         });
-
-        // Bonus
-
-        $('dt').click(function() {
-            $(this).toggleClass('highlight');
-        });
-
     });
+
+    $("#li2").click(function() {
+       $("ul").each(function(index, element) {
+           $(this).children().last().toggleClass('highlight');
+        });
+    });
+
+    //When any h3 is clicked,
+    // the lis underneath it should be bolded. Use font-weight: bold to achieve this.
+    $("h3").click(function() {
+        $(this).next().children().css('font-weight', 'bold');
+    });
+
+    // When any list item is clicked, first li of the parent ul should have a font color of blue.
+    $("li").click(function() {
+        $(this).parent().children().first().css('color', 'blue');
+    });
+
+
 
 </script>
 

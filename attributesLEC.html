@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attributes</title>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <style>
+
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+        .coolBox {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+        .awesomeTitle {
+            font-family: "Comic Sans MS";
+            font-size: 40px;
+            font-weight: bold;
+            background-color: blue;
+            color: yellow;
+            padding: 10px;
+            padding-bottom: 10px;
+            border-radius: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <main class="container">
+
+        <h1 class="text-center">Sign In</h1>
+
+        <div class="box"></div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Login Form</h3>
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <label for="pass">Password</label>
+                        <input class="form-control" type="password" id="pass">
+                    </div>
+                    <div class="form-group">
+                        <label for="verify">Verify Password</label>
+                        <input class="form-control" type="password" id="verify">
+                    </div>
+                    <button class="btn btn-primary btn-block">Login</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <script>
+
+        $(document).ready(function() {
+            "use strict";
+
+            // Getter (returns a value)
+
+                // var headingHtml = $('h1').html();
+                // console.log(headingHtml);
+
+                // var divDisplay = $('div').css('background-color');
+                // console.log(divDisplay);
+
+
+            // Setter (returns a jQuery object)
+
+                // $('.box').css('width', '70px').css('height', '100px');
+                //
+                // $('.box').css({
+                //     'width': '70px',
+                //     'height': '100px'
+                // });
+
+
+            // addClass() and removeClass()
+
+                $('.box').hover(function() {
+                    $(this).addClass('coolBox');
+                }, function() {
+                    $(this).removeClass('coolBox');
+                });
+
+
+
+            // toggleClass()
+
+
+                $('h1').dblclick(function(){
+                    $(this).toggleClass('awesomeTitle');
+                    console.log($(this).hasClass('awesomeTitle'));
+                });
+
+
+
+            // another example of toggleClass()
+
+
+                $('button').addClass('invisible');
+                $('input').on('keyup', function() {
+                   if ($('#verify').val() === $('#pass').val() && $(this).val().length > 5) {
+                       $('button').removeClass('invisible');
+                   }
+                });
+
+
+
+        });
+
+    </script>
+
+</body>
+</html>
+
+
+

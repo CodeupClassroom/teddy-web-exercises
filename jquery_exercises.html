@@ -1,26 +1,88 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>jQuery Intro Exercise</title>
+    <title>Title</title>
+    <style>
+        main {
+            margin: 1em;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+
+    </style>
 </head>
 <body>
+<main id="codeup">
+    <div id="idSelectorExercises">
+        <h1><a id="link" class="multiple" href="https://codeup.com" target="_blank">Hello</a></h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus fugit, possimus. Accusantium, ad architecto at, blanditiis consequatur distinctio dolorem eligendi minima neque nostrum placeat quae, quaerat quisquam recusandae reiciendis veritatis!</p>
+        <ul class="list">
+            <li>One for the money</li>
+            <li>Two for the show</li>
+            <li>Three to get ready</li>
+            <li>Four to go!</li>
+        </ul>
+    </div>
+    <hr>
+    <div class="classSelectorContent">
+        <h1 class="codeup">Welcome to Codeup!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi beatae dignissimos dolorum facere, fuga impedit itaque libero nesciunt nobis quos! At aut corporis eum exercitationem laboriosam quibusdam repudiandae voluptas voluptate.</p>
+        <ul>
+            <li class="codeup">HTML5</li>
+            <li class="codeup">CSS3</li>
+            <li>JavaScript, jQuery, ECMAScript6</li>
+            <li class="codeup">Java</li>
+            <li class="codeup">MySQL</li>
+        </ul>
+    </div>
+    <hr>
+    <section>
+        <h1>Howdy, World!</h1>
+        <p>Things that don't require talent</p>
+        <ul>
+            <li>Being on time</li>
+            <li>Work Ethic</li>
+            <li id="thirdItem">Effort</li>
+            <li>Body Language</li>
+            <li>Energy</li>
+            <li>Attitude</li>
+            <li>Passion</li>
+            <li>Being Coachable</li>
+            <li>Doing Extra</li>
+            <li>Being prepared</li>
+        </ul>
+    </section>
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+        // change background color of an h1 when clicked
+        // $("h1").click(function(event) {
+        //     // $(this).css('background-color', 'cyan');
+        //     $(event.target).css('background-color', 'cyan');
+        // });
+
+        // make all p tags have font-size 18 when doubleClicked
+        var paragraphs = $("p");
+
+        paragraphs.dblclick(function(e) {
+            paragraphs.css("font-size", 24);
+        });
+
+        // set all li text color to red when the mouse is hovering over, reset to black text when there's no more hover
+        $("li").hover(
+            function(event) {
+                $("li").css("color", "red");
+            },
+            function(event) {
+               $("li").css("color", "black");
+            }
+        );
+
+        $("h1").click(function(event) {
+            $(event.target).toggleClass("highlight");
+        });
 
 
-<!--<script-->
-    <!--src="https://code.jquery.com/jquery-2.2.4.js"-->
-    <!--integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="-->
-    <!--crossorigin="anonymous"></script>-->
-
-<script src="js/jquery-2.2.4.js"></script>
-<script>
-    $(document).ready(function() {
-        "use strict";
-        alert("DOM finished loading!");
-    });
-</script>
-</body>
-</html>
+    </script>

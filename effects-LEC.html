@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>jQuery Traversal Lecture</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+
+        .border {
+            border: 1px solid black;
+            width: 10%;
+            text-align: center;
+        }
+
+        .darker {
+            background-color: papayawhip;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<main class="container">
+
+    <br>
+
+    <button class="btn btn-default" id="hideHeadingBtn">Hide Heading</button>
+    <button class="btn btn-default" id="showHeadingBtn">Show Heading</button>
+    <button class="btn btn-default" id="toggleHeadingBtn">Toggle Heading</button>
+    <button class="btn btn-default" id="fadeOutTableBtn">FadeOut Table</button>
+    <button class="btn btn-default" id="fadeInTableBtn">FadeIn Table</button>
+    <button class="btn btn-default" id="fadeToggleRowsBtn">FadeToggle Rows</button>
+    <button class="btn btn-default" id="slideUpListBtn">Slide Up List</button>
+    <button class="btn btn-default" id="slideDownListBtn">Slide Down List</button>
+    <button class="btn btn-default" id="slideToggleListBtn">Slide Toggle List</button>
+
+    <br>
+
+    <h1>jQuery Traversal Lecture</h1>
+
+    <div class="table">
+
+        <table>
+
+            <thead>
+                <h3>Bond Table</h3>
+                <tr>
+                    <th>Film</th>
+                    <th>Bond Actor</th>
+                    <th>Bond Villain</th>
+                    <th>Title Song Artist</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Live and Let Die</td>
+                    <td>Roger Moore</td>
+                    <td>Baron Samedi</td>
+                    <td>Wings</td>
+                </tr>
+                <tr>
+                    <td>Dr. No</td>
+                    <td>Sean Connery</td>
+                    <td>Dr. No</td>
+                    <td>John Berry</td>
+                </tr>
+                <tr>
+                    <td>Casino Royal</td>
+                    <td>Daniel Craig</td>
+                    <td>Le Chiffre</td>
+                    <td>Chris Cornell</td>
+                </tr>
+                <tr>
+                    <td>Goldeneye</td>
+                    <td>Pierce Brosnan</td>
+                    <td>Alec Trevelyan</td>
+                    <td>Tina Turner</td>
+                </tr>
+                <tr>
+                    <td>Live and Let Die</td>
+                    <td>Roger Moore</td>
+                    <td>Baron Samedi</td>
+                    <td>Wings</td>
+                </tr>
+                <tr>
+                    <td>Dr. No</td>
+                    <td>Sean Connery</td>
+                    <td>Dr. No</td>
+                    <td>John Berry</td>
+                </tr>
+                <tr>
+                    <td>Casino Royal</td>
+                    <td>Daniel Craig</td>
+                    <td>Le Chiffre</td>
+                    <td>Chris Cornell</td>
+                </tr>
+                <tr>
+                    <td>Goldeneye</td>
+                    <td>Pierce Brosnan</td>
+                    <td>Alec Trevelyan</td>
+                    <td>Tina Turner</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</main>
+
+<script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+
+    // Effects lecture
+    $(document).ready(function() {
+
+        "use strict";
+
+        // ==============================SETTING UP THE TABLE==============================
+
+        // Create border around every table element
+//        $("td").addClass("border"); // will not work for table heading
+
+        $("tr").children().addClass("border");
+
+
+        // Add class darker to every other row
+        $("tr").each(function(index, element){
+            if (index % 2) {
+                $(this).children().addClass("darker");
+            }
+        });
+
+        // Make the table header all caps and 20px font
+        $("tr").first().css({
+            "text-transform": "uppercase",
+            "font-size": "20px"
+        });
+
+        // Make each row font color change to blue and text to underline on hover
+        $("tr").not(":eq(0)").hover(
+            function() {
+                $(this).css("text-decoration", "underline").css("color", "blue");
+                $(this).next().css("color", "white");
+                $(this).prev().css("color", "white");
+            }, function() {
+                $(this).css("text-decoration", "none").css("color", "black");
+                $(this).next().css("color", "black");
+                $(this).prev().css("color", "black");
+            }
+        );
+
+
+
+        // ==============================ADDING EFFECTS==============================
+
+        // Hide main heading
+        $('#hideHeadingBtn').click(function() {
+            $('h1').hide();
+        });
+
+        // Show main heading
+        $('#showHeadingBtn').click(function() {
+            $('h1').show();
+        });
+
+
+        // Toggle main heading
+        $('#toggleHeadingBtn').click(function() {
+            $('h1').toggle();
+        });
+
+
+        // Fade in table
+        $('#fadeOutTableBtn').click(function() {
+            $('table').fadeOut();
+        });
+
+
+        // Fade out table
+
+        $('#fadeInTableBtn').click(function() {
+            $('table').fadeIn();
+        });
+
+
+
+        // Fade toggle table
+
+        $('#fadeToggleRowsBtn').click(function() {
+            $('table').fadeToggle();
+        });
+
+        // Slide up list
+
+        $('#slideUpListBtn').click(function() {
+            $('.table').slideUp();
+        });
+
+        // Slide down list
+        $('#slideDownListBtn').click(function() {
+            $('.table').slideDown();
+        });
+
+
+
+        // Slide toggle list over 2000 milliseconds
+        // with linear easing, console logging fire
+        // for every step and a message when complete
+
+        $('#slideToggleListBtn').click(function() {
+            $('.table').slideToggle({
+                duration: 200,
+                easing: 'linear',
+                progress: function() {
+                    console.log("FIRE!");
+                },
+                complete: function() {
+                  console.log("That's all folks!");
+                }
+            });
+        });
+
+
+
+
+    });
+
+</script>
+
+</body>
+
+</html>

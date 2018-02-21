@@ -35,23 +35,18 @@ const users = [
 
 
 // PROBLEM 1
-// Create a file named map-filter-reduce.js in your
-// js directory and copy the data below into it.
-
-
-
-// PROBLEM 2
 // Use .filter to create an array of user objects
 // where each user object has at least 3 languages in the languages array.
 
 
-// PROBLEM 3
+// PROBLEM 2
 // Use .map to create an array of strings where each
 // element is a user's email address
 
 
-// PROBLEM 4
+// PROBLEM 3
 // Use .reduce to transform the array into an object
 // where the object's keys are ids and the values are objects that represent each user
+
 
 

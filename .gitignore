@@ -2,3 +2,5 @@
 *.iml
 **.DS_Store
 passwords.txt
+node_modules
+package-lock.json

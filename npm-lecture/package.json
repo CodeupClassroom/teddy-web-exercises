@@ -1,0 +1,23 @@
+{
+  "name": "npm-lecture",
+  "version": "1.0.0",
+  "description": "this is just lecture",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeupClassroom/teddy-web-exercises.git"
+  },
+  "author": "Codeup",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodeupClassroom/teddy-web-exercises/issues"
+  },
+  "homepage": "https://github.com/CodeupClassroom/teddy-web-exercises#readme",
+  "dependencies": {
+    "babel-core": "^6.23.0",
+    "webpack": "^3.11.0"
+  }
+}
